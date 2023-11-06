@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header styles */
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  background-color: #f5ad42; /* Header background color */
+  color: #fff; /* Text color for icons and title */
+}
+
+/* Title styles */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #150000;
+}
+
+/* "Enter Ingredients" text styles */
+.enter-ingredients {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar-container {
+  display: flex;
+  justify-content: center; /* Center the search bar horizontally */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ingredient Search Bar styles */
+.search-bar {
+  width: 35%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
+
+/* Suggested and Saved Recipes Widgets styles */
+.widget {
+  width: 25%; /* Adjust the width as needed */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.widget.right {
+  margin-left: 73%; 
+  margin-right: 0;
+  margin-top: -22.75%;
+}
+.widget.left {
+  margin-left: 0; 
+  margin-right: 100%;
+}
+
+/* Recipe list styles (within the widgets) */
+.recipe-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Recipe item styles */
+.recipe-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Locked recipe item styles */
+.recipe-item.locked {
+  background-color: #d9ffd9; /* Customize the color for locked items */
+  font-weight: bold;
+}
+
+/* Customize the styles further as needed */
+
+/* User icon and dashboard icon styles */
+.icon {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* Add any additional styles here */
