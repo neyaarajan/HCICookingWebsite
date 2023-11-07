@@ -2,12 +2,19 @@ body {
   margin: 0;
 }
 
+.App {
+  display: grid;
+  grid-template-rows: 15% 20% 100%;
+  grid-template-columns: 1/3 1/3 1/3;
+}
+
 /* Header styles */
 .header {
+  grid-row: 1;
+  grid-column: 1 / span 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: #f5ad42; /* Header background color */
   color: #fff; /* Text color for icons and title */
 }
@@ -22,44 +29,54 @@ body {
 
 /* "Enter Ingredients" text styles */
 .enter-ingredients {
+  grid-column: 2;
+  grid-row: 2;
   font-size: 30px;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
+  text-align: center;
 }
 
 .search-bar-container {
-  display: flex;
-  justify-content: center; /* Center the search bar horizontally */
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
 }
 
 /* Ingredient Search Bar styles */
 .search-bar {
-  width: 35%;
-  padding: 10px;
+  width: 85%;
+  height: 30px;
   border: 1px solid #ccc;
-  border-radius: 5px;
   font-size: 16px;
 }
 
+
+.suggested {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 10px;
+}
+
+.saved {
+  grid-column: 3;
+  grid-row: 3;
+  margin: 10px;
+}
+
+
 /* Suggested and Saved Recipes Widgets styles */
 .widget {
-  width: 25%; /* Adjust the width as needed */
+  width: 85%;
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 25px;
+  max-height: 50%;
+  overflow-y: auto;
 }
 .widget.right {
-  margin-left: 73%; 
-  margin-right: 0;
-  margin-top: -22.75%;
-}
-.widget.left {
-  margin-left: 0; 
-  margin-right: 100%;
+  grid-column: 3;
+  grid-row: 3;
 }
 
 /* Recipe list styles (within the widgets) */

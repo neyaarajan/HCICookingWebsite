@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
 import './App.css';
+import Select from "react-select";
 
 function App() {
   // State for managing entered and locked ingredients
   const [enteredIngredients, setEnteredIngredients] = useState([]);
   const [lockedIngredients, setLockedIngredients] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(0);
 
   // Sample suggested and saved recipes
-  const suggestedRecipes = ['Recipe 1', 'Recipe 2', 'Recipe 3'];
+  const suggestedRecipes = ['Recipe 1', 'Recipe 2', 'Recipe 3', 'Joe mama'];
   const savedRecipes = ['Saved Recipe 1', 'Saved Recipe 2'];
+  const options = [
+    {value: "eggs", label:"Eggs"},
+    {value: "milk", label:"Milk"},
+    {value: "cereal", label:"Cereal"},
+    {value: "water", label:"Water"},
+    {value: "oil", label:"Oil"},
+  ];
 
-  // Function to handle ingredient selection
-  const handleIngredientSelect = (ingredient) => {
-    // Check if the ingredient is already in the locked list
-    if (!lockedIngredients.includes(ingredient)) {
-      setLockedIngredients([...lockedIngredients, ingredient]);
-    }
+
+  const handleChangeSearch = (selectedOption) => {
+    setSelectedOption(selectedOption);
   };
+
+
 
   return (
     <div className="App">
@@ -28,48 +36,54 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main>
-        <div className="enter-ingredients">Enter Ingredients to Start!</div>
         <div className="search-bar-container">
-          <input
-            className="search-bar"
-            type="text"
-            placeholder="Enter ingredients"
-          />
+          <h2>Enter Ingredients to Start!</h2>
+            {/* <input
+              className="search-bar"
+              type="text"
+              placeholder="Enter ingredients"
+            /> */}
+            <Select
+              options = {options}
+              value = {selectedOption}
+              onChange={handleChangeSearch}
+              isMulti = {true}
+            />
         </div>
 
         {/* Suggested Recipes Widget */}
-        <div className="widget left">
+        <div className='suggested'>
           <h2>Suggested Recipes</h2>
-          <ul className="recipe-list">
-            {suggestedRecipes.map((recipe) => (
-              <li
-                key={recipe}
-                className="recipe-item"
-                onClick={() => handleIngredientSelect(recipe)}
-              >
-                {recipe}
-              </li>
-            ))}
-          </ul>
+          <div className="widget">
+            <ul className="recipe-list">
+              {suggestedRecipes.map((recipe) => (
+                <li
+                  key={recipe}
+                  className="recipe-item"
+                >
+                  {recipe}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Saved Recipes Widget */}
-        <div className="widget right">
+        <div className = 'saved'>
           <h2>Saved Recipes</h2>
-          <ul className="recipe-list">
-            {savedRecipes.map((recipe) => (
-              <li
-                key={recipe}
-                className={`recipe-item ${lockedIngredients.includes(recipe) && 'locked'}`}
-                onClick={() => handleIngredientSelect(recipe)}
-              >
-                {recipe}
-              </li>
-            ))}
-          </ul>
+          <div className="widget">
+            <ul className="recipe-list">
+              {savedRecipes.map((recipe) => (
+                <li
+                  key={recipe}
+                  className={`recipe-item ${lockedIngredients.includes(recipe) && 'locked'}`}
+                >
+                  {recipe}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </main>
     </div>
   );
 }
