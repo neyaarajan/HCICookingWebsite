@@ -1,37 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using React Router for routing
-//import './Recipe.css'; // You can create a separate CSS file for styling
+import { useParams, Link } from "react-router-dom";
+ 
 
-function Recipe() {
+
+function Recipe({ RecipeList }) {
+
+  let { recipeID } = useParams();
+  console.log(recipeID);
+  const recipe = RecipeList.find(recipe => recipe._id === recipeID);
+  const arraySteps = recipe.instructions.map((instructions) => <li>{instructions}</li>);
+  const arrayIngredients = recipe.ingredients.map((ingredients) => <li>{ingredients}</li>);
+
   return (
-    <div className="recipe-page">
-      {/* Header */}
-      <header className="recipe-header">
-        <Link to="/" className="icon">Dashboard Icon</Link>
-        <h1 className="title">Collegiate Cooks</h1>
-        <h2 className="recipe-title">Sample Recipe</h2>
+    <div className="recipes-container">
+      <header className="dashboard">
+        <div className="menu-icon">Placeholder Image</div>
+        <Link to="/" className="title-link">
+          <h2>Collegiate Cooks</h2>
+        </Link>
       </header>
 
-      {/* Table Layout */}
-      <div className="recipe-table">
-        {/* Left Box - Steps */}
-        <div className="steps-box">
-          <h3>Steps</h3>
-          <ul className="steps-list">
-            <li>Step 1: ...</li>
-            <li>Step 2: ...</li>
-            {/* Add more steps as needed */}
-          </ul>
-        </div>
-
-        {/* Right Box - Ingredients */}
-        <div className="ingredients-box">
-          <h3>Ingredients</h3>
-          <ul className="ingredients-list">
-            <li>Ingredient 1: ...</li>
-            <li>Ingredient 2: ...</li>
-            {/* Add more ingredients as needed */}
-          </ul>
+      <div className="main-content">
+        <h1 className="recipe-title">{recipe.name}</h1>
+        <div className="recipe-table">
+          <div className="column steps">
+            <h3>Steps</h3>
+            <p>Time: {recipe.time} minutes</p>
+            <ul>{arraySteps}</ul>
+          </div>
+          <div className="column ingredients">
+            <h3>Ingredients</h3>
+            <ul>{arrayIngredients}</ul>
+          </div>
         </div>
       </div>
     </div>
