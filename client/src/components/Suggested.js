@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import menuIcon from '../images/menuIcon.png'
 
-function Saved({RecipeList, setSelectedRecipe, savedRecipes}) {
+function Suggested({RecipeList, setSelectedRecipe, SuggestedRecipes}) {
   const navigate = useNavigate();
 
   const handleRecipeSelect = (recipeId) => {
@@ -20,10 +20,10 @@ function Saved({RecipeList, setSelectedRecipe, savedRecipes}) {
         </Link>
       </header>
       <div className="main-content">
-        <h1 className="page-title">Saved Recipes!</h1>
+        <h1 className="page-title">Suggested Recipes!</h1>
         <div className="widget-savedPage">
           <ul className ="recipe-list">
-            {savedRecipes.map((recipe) => (
+            {SuggestedRecipes.map((recipe) => (
               <li
                 key={recipe}
                 className= "recipe-item"
@@ -39,4 +39,4 @@ function Saved({RecipeList, setSelectedRecipe, savedRecipes}) {
   );
 }
 
-export default Saved;
+export default Suggested;

@@ -24,7 +24,7 @@ function Recipe({ RecipeList, savedRecipes, setSavedRecipes }) {
         <div className="menu-icon">
           <img src={menuIcon} alt="menuIcon" />
         </div>
-        <Link to="/" className="title-link">
+        <Link to="/home" className="title-link">
           <h2>Collegiate Cooks</h2>
         </Link>
       </header>

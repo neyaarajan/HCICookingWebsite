@@ -4,6 +4,8 @@ import Recipe from './components/Recipe.js'
 import Home from './components/Home'
 import Saved from './components/Saved.js'
 import Error from './components/Error.js'
+import LandingPage from './components/LandingPage.js'
+import Suggested from './components/Suggested.js'
 
 
 
@@ -47,7 +49,7 @@ export const MyRoutes = ({data}) => {
                     savedRecipes = {savedRecipes}
                     setSavedRecipes={setSavedRecipes}
                  />} />
-                <Route path = "/" element = 
+                <Route path = "/home" element = 
                 {<Home
                     RecipeList={RecipeList}
                     selectedOptions={selectedOptions}
@@ -67,6 +69,25 @@ export const MyRoutes = ({data}) => {
                     savedRecipes = {savedRecipes}
                 
                 />} />
+                <Route path = "/" element = 
+                {<LandingPage
+                    RecipeList={RecipeList}
+                    selectedOptions={selectedOptions}
+                    selectedRecipe={selectedRecipe}
+                    suggestedRecipes = {suggestedRecipes}
+                    savedRecipes = {savedRecipes}
+                    setSelectedOptions={setSelectedOptions}
+                    setSelectedRecipe={setSelectedRecipe}
+                    setSuggestedRecipes = {setSuggestedRecipes}
+                    options = {optionList}
+                />} />
+                <Route path = "/suggested" element = 
+                {<Suggested
+                    RecipeList={RecipeList}
+                    SuggestedRecipes = {suggestedRecipes}
+                    setSelectedRecipe={setSelectedRecipe}
+                />}
+                />
                 <Route path = "*" element = {<Error />} />
             </Routes>
         </Router>

@@ -38,7 +38,7 @@ function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, sugges
           console.log(selectedOptions);
 
 
-        }, [selectedOptions, RecipeList]);
+        }, [selectedOptions, RecipeList, setSuggestedRecipes]);
     
     return (
       <div className="App">
@@ -54,7 +54,6 @@ function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, sugges
   
         {/* Main Content */}
           <div className="search-bar-container">
-          <h1 className="title">Collegiate Cooks</h1>
             <h2>Enter Ingredients to Start!</h2>
               <Select
                 options = {options}
@@ -66,40 +65,16 @@ function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, sugges
   
           {/* Suggested Recipes Widget */}
           <div className='suggested'>
+          <Link to="/suggested" className="start-button">
             <h2>Suggested Recipes</h2>
-            <div className="widget">
-              <ul className="recipe-list">
-                {suggestedRecipes.map((recipe) => (
-                  <li
-                    key={recipe._id}
-                    className="recipe-item"
-                    onClick={() => handleRecipeSelect(recipe._id)}
-                  >
-                    {recipe.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          </Link>
           </div>
   
           {/* Saved Recipes Widget */}
           <div className = 'saved'>
-          <Link to="/saved" className="title-link">
+          <Link to="/saved" className="start-button">
             <h2>Saved Recipes</h2>
           </Link>
-            <div className="widget">
-              <ul className="recipe-list">
-                {savedRecipes.map((recipe) => (
-                  <li
-                    key={recipe}
-                    className= "recipe-item"
-                    onClick={() => handleRecipeSelect(recipe._id)}
-                  >
-                    {recipe.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
       </div>
     );
