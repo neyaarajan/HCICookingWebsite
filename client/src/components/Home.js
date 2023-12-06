@@ -1,41 +1,55 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Select, { components } from "react-select";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import menuIcon from '../images/menuIcon.png'
+import userIcon from '../images/userIcon.png'
 
+function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, suggestedRecipes, setSelectedOptions, setSelectedRecipe, setSuggestedRecipes, options}){
 
-function Home({RecipeList, selectedOptions, selectedRecipe, setSelectedOptions, setSelectedRecipe}){
-        // Sample suggested and saved recipes
-        
-        const savedRecipes = ['Saved Recipe 1', 'Saved Recipe 2'];
-        const options = [
-          {value: "eggs", label:"Eggs"},
-          {value: "milk", label:"Milk"},
-          {value: "cereal", label:"Cereal"},
-          {value: "water", label:"Water"},
-          {value: "oil", label:"Oil"},
-        ];
       
         
         const navigate = useNavigate();
       
         const handleChangeSearch = (selectedOptions) => {
           setSelectedOptions(selectedOptions);
+          console.log(selectedOptions);
         };
         const handleRecipeSelect = (recipeId) => {
           setSelectedRecipe(recipeId);
-          console.log(selectedRecipe);
-          console.log(recipeId);
-
           navigate(`/recipes/${recipeId}`);
         };
-    
+        
+        /*
+        When selectedOptions or RecipeList is changed
+        this function iterates over each recipe and checks
+        if the recipe's ingredients contains at least
+        one selected ingredient (using .some() function).
+        If ingredient and option.label are the same, true is return
+        */
+        useEffect(() => {
+          const filterRecipes = RecipeList.filter((recipe) => {
+            return recipe.ingredients.some((ingredient) =>
+            selectedOptions.some((option) =>
+              ingredient === option.label
+            )
+          );
+          });
+          setSuggestedRecipes(filterRecipes);
+          console.log(selectedOptions);
+
+
+        }, [selectedOptions, RecipeList]);
     
     return (
       <div className="App">
         {/* Header */}
         <header className="header">
-          <div className="icon">Dashboard Icon</div>
-          <div className="icon">User Icon</div>
+          <div className="icon">
+            <img src={menuIcon} alt="menuIcon" />
+          </div>
+          <div className="icon">
+            <img src={userIcon} alt="userIcon" />
+          </div>
         </header>
   
         {/* Main Content */}
@@ -55,7 +69,7 @@ function Home({RecipeList, selectedOptions, selectedRecipe, setSelectedOptions, 
             <h2>Suggested Recipes</h2>
             <div className="widget">
               <ul className="recipe-list">
-                {RecipeList.map((recipe) => (
+                {suggestedRecipes.map((recipe) => (
                   <li
                     key={recipe._id}
                     className="recipe-item"
@@ -70,16 +84,18 @@ function Home({RecipeList, selectedOptions, selectedRecipe, setSelectedOptions, 
   
           {/* Saved Recipes Widget */}
           <div className = 'saved'>
+          <Link to="/saved" className="title-link">
             <h2>Saved Recipes</h2>
+          </Link>
             <div className="widget">
               <ul className="recipe-list">
                 {savedRecipes.map((recipe) => (
                   <li
                     key={recipe}
                     className= "recipe-item"
-                    onClick={() => handleRecipeSelect(recipe)}
+                    onClick={() => handleRecipeSelect(recipe._id)}
                   >
-                    {recipe}
+                    {recipe.name}
                   </li>
                 ))}
               </ul>

@@ -15,8 +15,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5ad42; /* Header background color */
-    color: #fff; /* Text color for icons and title */
+    background-color: #f5ad42;
+    color: #fff; 
   }
   
   /* Title styles */
@@ -33,7 +33,7 @@ body {
     text-decoration: none;
   }
   
-  /* "Enter Ingredients" text styles */
+  /* "Enter Ingredients" styles */
   .enter-ingredients {
     grid-column: 2;
     grid-row: 2;
@@ -48,7 +48,7 @@ body {
     text-align: center;
   }
   
-  /* Ingredient Search Bar styles */
+  /* Ingredient search styles */
   .search-bar {
     width: 85%;
     height: 30px;
@@ -61,16 +61,18 @@ body {
     grid-column: 1;
     grid-row: 3;
     margin: 10px;
+    text-align: center;
   }
   
   .saved {
     grid-column: 3;
     grid-row: 3;
     margin: 10px;
+    text-align: center;
   }
   
   
-  /* Suggested and Saved Recipes Widgets styles */
+  /* Suggested and saved recipes widgets styles */
   .widget {
     width: 85%;
     margin: 10px;
@@ -80,8 +82,18 @@ body {
     max-height: 50%;
     overflow-y: auto;
   }
+
+  .widget-savedPage {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    max-height: 50%;
+    overflow-y: auto;
+  }
   
-  /* Recipe list styles (within the widgets) */
+  /* Recipe list styles */
   .recipe-list {
     list-style-type: none;
     padding: 0;
@@ -112,13 +124,12 @@ body {
     cursor: pointer;
   }
   
-  /* Add any additional styles here */
 
 
- /* Recipe Styles */
+ /* Non-main page styles */
 
 
- .recipes-container {
+ .page-container {
   display: grid;
   grid-template-rows: 100px 120%;
   grid-template-columns: auto 1fr;
@@ -130,7 +141,7 @@ body {
   display: flex;
   align-items: center;
   background-color: #f5ad42;
-  color: #fff;
+  color: #000000;
   padding: 0 10px;
 }
 
@@ -155,7 +166,7 @@ body {
   padding: 0px;
 }
 
-.recipe-title {
+.page-title {
   font-size: 36px;
   margin-bottom: 20px;
 }
@@ -192,4 +203,11 @@ ul {
 li {
   font-size: 16px;
   margin-bottom: 5px;
+}
+
+.saveButton {
+  height: 40px;
+  align-items: center;
+  padding: 10px;
+  margin-left: 15px;
 }

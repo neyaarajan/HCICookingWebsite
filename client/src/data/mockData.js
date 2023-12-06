@@ -52,7 +52,7 @@ const mockRecipes = [
   },
   {
     _id: '5',
-    name: 'Spaghetti Aglio e Olio',
+    name: 'Spaghetti',
     time: 25,
     ingredients: ['Spaghetti', 'Olive Oil', 'Garlic', 'Red Pepper Flakes', 'Parsley', 'Parmesan Cheese'],
     instructions: [
@@ -61,6 +61,43 @@ const mockRecipes = [
       'Step 3: Toss cooked spaghetti in the pan with the garlic oil.',
       'Step 4: Add chopped parsley and grated Parmesan cheese.',
       'Step 5: Serve with extra cheese and enjoy!',
+    ],
+  },
+  {
+    _id: '6',
+    name: 'Cream Cheese and Jelly Sandwich',
+    time: 5,
+    ingredients: ['Bread', 'Cream Cheese', 'Jelly'],
+    instructions: [
+      'Step 1: Take two slices of bread.',
+      'Step 2: Spread cream cheese on one slice.',
+      'Step 3: Spread jelly on the other slice.',
+      'Step 4: Press the two slices together.',
+      'Step 5: Cut in half and enjoy!',
+    ],
+  },
+  {
+    _id: '7',
+    name: 'Buttered Toast',
+    time: 5,
+    ingredients: ['Bread', 'Butter'],
+    instructions: [
+      'Step 1: Toast slices of bread.',
+      'Step 2: Spread butter on the toasted bread.',
+      'Step 3: Enjoy your buttered toast!',
+    ],
+  },
+  {
+    _id: '8',
+    name: 'Roasted Ground Beef',
+    time: 45,
+    ingredients: ['Ground Beef', 'Olive Oil', 'Salt', 'Pepper'],
+    instructions: [
+      'Step 1: Preheat the oven to 375°F (190°C).',
+      'Step 2: Place the ground beef in a baking dish.',
+      'Step 3: Drizzle olive oil over the beef and season with salt and pepper.',
+      'Step 4: Roast in the preheated oven for 30-35 minutes or until cooked through.',
+      'Step 5: Remove from the oven and let it rest for a few minutes before serving.',
     ],
   },
 ];
