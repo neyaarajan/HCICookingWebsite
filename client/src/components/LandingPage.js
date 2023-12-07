@@ -3,6 +3,7 @@ import Select, { components } from "react-select";
 import { Link, useNavigate } from "react-router-dom";
 import menuIcon from '../images/menuIcon.png'
 import userIcon from '../images/userIcon.png'
+import DashboardIcon from './dashboard';
 
 function Landing({RecipeList, selectedOptions, selectedRecipe, savedRecipes, suggestedRecipes, setSelectedOptions, setSelectedRecipe, setSuggestedRecipes, options}) {
     const navigate = useNavigate();
@@ -16,13 +17,10 @@ function Landing({RecipeList, selectedOptions, selectedRecipe, savedRecipes, sug
         <div className="App">
           {/* Header */}
           <header className="header">
-            <div className="icon">
-              <img src={menuIcon} alt="menuIcon" />
-            </div>
-            <div className="icon">
-              <img src={userIcon} alt="userIcon" />
-            </div>
-          </header>
+          <div className="icon">
+            <DashboardIcon />
+          </div>
+        </header>
           
     
             {/* Main Content */}

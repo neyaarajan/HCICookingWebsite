@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import menuIcon from '../images/menuIcon.png'
+import DashboardIcon from "./dashboard";
 
 function Suggested({RecipeList, setSelectedRecipe, SuggestedRecipes}) {
   const navigate = useNavigate();
@@ -11,14 +12,11 @@ function Suggested({RecipeList, setSelectedRecipe, SuggestedRecipes}) {
 
   return (
     <div className="page-container">
-      <header className="dashboard">
-        <div className="menu-icon">
-          <img src={menuIcon} alt="menuIcon" />
-        </div>
-        <Link to="/home" className="title-link">
-          <h2>Collegiate Cooks</h2>
-        </Link>
-      </header>
+        <header className="header">
+          <div className="icon">
+            <DashboardIcon />
+          </div>
+        </header>
       <div className="main-content">
         <h1 className="page-title">Suggested Recipes!</h1>
         <div className="widget-savedPage">

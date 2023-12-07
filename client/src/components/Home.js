@@ -3,6 +3,7 @@ import Select, { components } from "react-select";
 import { Link, useNavigate } from "react-router-dom";
 import menuIcon from '../images/menuIcon.png'
 import userIcon from '../images/userIcon.png'
+import DashboardIcon from './dashboard';
 
 function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, suggestedRecipes, setSelectedOptions, setSelectedRecipe, setSuggestedRecipes, options}){
 
@@ -45,10 +46,7 @@ function Home({RecipeList, selectedOptions, selectedRecipe, savedRecipes, sugges
         {/* Header */}
         <header className="header">
           <div className="icon">
-            <img src={menuIcon} alt="menuIcon" />
-          </div>
-          <div className="icon">
-            <img src={userIcon} alt="userIcon" />
+            <DashboardIcon />
           </div>
         </header>
   
