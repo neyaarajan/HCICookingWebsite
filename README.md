@@ -1,6 +1,6 @@
 # HCICookingWebsite
 
-Design A is found in branch DesignA.
+Design A is found in branch DesignA.\n
 Design B is found in branch DesignB.
 
 To run the website, ensure npm is installed. After cloning or downloading repo, checkout to desired branch
