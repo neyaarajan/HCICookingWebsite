@@ -7,6 +7,7 @@ To run the website, ensure npm is installed. After cloning or downloading repo, 
 Then run:
 
 npm install
+
 npm start
 
 and the website should be hosted on your localhost:3000.
