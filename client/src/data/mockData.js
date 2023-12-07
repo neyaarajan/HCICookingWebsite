@@ -100,6 +100,34 @@ const mockRecipes = [
       'Step 5: Remove from the oven and let it rest for a few minutes before serving.',
     ],
   },
+  {
+    _id: '9',
+    name: 'Breakfast Burrito',
+    time: 20,
+    ingredients: ['Eggs', 'Sausage', 'Tortilla Wraps', 'Cheese', 'Onion', 'Bell Pepper', 'Salt', 'Pepper', 'Salsa'],
+    instructions: [
+      'Step 1: Dice the onion and bell pepper. Cut the sausage into small pieces.',
+      'Step 2: In a skillet, cook the sausage over medium heat until browned.',
+      'Step 3: Add the onion and bell pepper to the skillet and cook until softened.',
+      'Step 4: Beat the eggs in a bowl and pour them into the skillet. Scramble the eggs with the sausage, onion, and bell pepper. Season with salt and pepper.',
+      'Step 5: Warm the tortilla wraps in a separate skillet or microwave.',
+      'Step 6: Place the scrambled egg mixture onto the tortillas. Sprinkle cheddar cheese on top.',
+      'Step 7: Roll the tortillas to form burritos. Serve with salsa on the side.',
+    ],
+  },
+  {
+    _id: '10',
+    name: 'Grilled Cheese Sandwich',
+    time: 15,
+    ingredients: ['Bread', 'Cheese', 'Butter'],
+    instructions: [
+      'Step 1: Butter one side of each bread slice.',
+      'Step 2: Place a slice of cheese between two slices of bread, with the buttered sides facing out.',
+      'Step 3: Heat a skillet over medium heat.',
+      'Step 4: Place the sandwich in the skillet. Cook until the bread is golden brown and the cheese has melted, about 3-4 minutes per side.',
+      'Step 5: Remove the sandwich from the skillet, cut diagonally, and serve hot.',
+    ],
+  },
 ];
 
 export default mockRecipes;
